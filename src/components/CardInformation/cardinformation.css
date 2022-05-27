@@ -1,0 +1,25 @@
+.card-information-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 10px;
+  background-color: inherit;
+}
+
+.card-information-container img {
+  place-self: center;
+}
+
+.container_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .card-information-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    text-align: center;
+  }
+}
