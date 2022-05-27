@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import MainRouter from "./components/MainRouter";
 import { Add } from "./Store/actions";
 import getAddCharacters from "./services/character";
+import "./app.css";
 
 function App() {
   const dispach = useDispatch();
