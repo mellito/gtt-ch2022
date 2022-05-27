@@ -1,8 +1,17 @@
-import { combineReducers } from "redux";
-import home, { initialState as homeInitial } from "../Home/Application/slice";
-
-export const initialState = {
-  home: homeInitial,
+const initialState = {
+  characterData: [],
+  loading: false,
 };
 
-export default combineReducers({ home });
+// eslint-disable-next-line default-param-last
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case "ADD_CHARACTERS": {
+      return { ...state, characterData: action.payload, loading: true };
+    }
+    default:
+      return state;
+  }
+}
+
+export default reducer;
