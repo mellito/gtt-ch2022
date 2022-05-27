@@ -20,9 +20,9 @@ function CardInformation({ character }) {
       <section className="container_data">
         <p>Name: {name}</p>
         <p>State: {status}</p>
-        <p>Spaecies:{species}</p>
-        <p>Gender:{gender}</p>
-        <p>Origin:{nameOrigin}</p>
+        <p>Spaecies: {species}</p>
+        <p>Gender: {gender}</p>
+        <p>Origin: {nameOrigin}</p>
         <p>Location: {nameLocation}</p>
       </section>
     </div>

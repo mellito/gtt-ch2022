@@ -1,4 +1,4 @@
-const API_URL = "https://rickandmortyapi.com/api/character/";
+const API_URL = "https://rickandmortyapi.com/api/character/?page=1";
 
 const getAddCharacters = async () => {
   try {

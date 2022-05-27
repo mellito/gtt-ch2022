@@ -1,7 +1,6 @@
 .card-information-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
-  background-color: #fff;
   gap: 10px;
   background-color: inherit;
 }
