@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { allCharacters } from "./Home/Application/slice";
+import MainRouter from "./components/MainRouter";
+import { Add } from "./Store/actions";
+import getAddCharacters from "./services/character";
 
 function App() {
   const dispach = useDispatch();
+  const AddCharacters = async () => {
+    const characters = await getAddCharacters();
+    setTimeout(() => {
+      dispach(Add(characters));
+    }, 3000);
+  };
   useEffect(() => {
-    dispach(allCharacters());
+    AddCharacters();
   }, []);
-  return (
-    <div className="App">
-      <p>hola</p>
-    </div>
-  );
+  return <MainRouter />;
 }
 
 export default App;
