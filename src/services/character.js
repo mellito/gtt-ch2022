@@ -1,8 +1,8 @@
-const API_URL = "https://rickandmortyapi.com/api/character/?page=1";
+const API_URL = "https://rickandmortyapi.com/api/character/";
 
-const getAddCharacters = async () => {
+export const getAddCharacters = async (id) => {
   try {
-    const response = await fetch(`${API_URL}`, {
+    const response = await fetch(`${API_URL}?page=${id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
@@ -13,4 +13,17 @@ const getAddCharacters = async () => {
     return console.error(error);
   }
 };
-export default getAddCharacters;
+
+export const getSingleCharacter = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}${id}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    const character = await response.json();
+
+    return character;
+  } catch (error) {
+    return console.error(error);
+  }
+};
